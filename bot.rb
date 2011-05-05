@@ -64,4 +64,4 @@ end
 puts "Tweets sent!"
 end_time = Time.now
 puts "#{hit_count} jokes played on #{VICTIM} by #{end_time}"
-puts "Elapsed time: #{start_time - end_time} seconds."
+puts "Elapsed time: #{end_time - start_time} seconds."
