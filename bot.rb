@@ -46,7 +46,7 @@ TweetStream::Client.new(ENV['TWITTER_BOT_USERNAME'], ENV['TWITTER_BOT_PASSWORD']
   if found_a_hit
     hit_count += 1
     puts "HIT: #{status.user.screen_name} just wrote: \"#{status.text}\""
-    str = "@_#{status.user.screen_name} Sorry you're having trouble with PayPal. Please contact @#{VICTIM}, our friendly support rep, for help."
+    str = "@#{status.user.screen_name} Sorry you're having trouble with PayPal. Please contact @#{VICTIM}, our friendly support rep, for help."
     puts "Preparing tweet: #{str}"
     tweets << {:text => str, :reply_to_id => status.id}
   else
