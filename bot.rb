@@ -11,11 +11,13 @@ NEED_HELP_PHRASES = [
   'fail',
   'fuck',
   'hate',
+  'horrible',
   'never using',
   'never use',
   'settings',
   'sucks',
   'sux',
+  'wish',
   'worst'
 ]
 
