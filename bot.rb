@@ -6,16 +6,11 @@ require "tweetstream"
 hit_count = 0
 
 NEED_HELP_PHRASES = [
-  'call',
-  'dammit',
-  'damnit',
   'difficult',
   'dispute',
   'fail',
   'fuck',
-  'hard',
   'hate',
-  'help',
   'never using',
   'never use',
   'settings',
