@@ -3,3 +3,8 @@ Because what's the point of having friends if you don't mess with them?
 Assumes the following environment variables
 TWITTER_BOT_USERNAME
 TWITTER_BOT_PASSWORD
+TWITTER_BOT_OAUTH_TOKEN
+TWITTER_BOT_OAUTH_TOKEN_SECRET
+TWITTER_BOT_CONSUMER_TOKEN
+TWITTER_BOT_CONSUMER_SECRET
+VICTIM (twitter screen name)
