@@ -31,6 +31,8 @@ end
 
 VICTIM = ENV['VICTIM']
 
+tweets = []
+
 start_time = Time.now
 puts "Beginning joke at #{start_time}"
 TweetStream::Client.new(ENV['TWITTER_BOT_USERNAME'], ENV['TWITTER_BOT_PASSWORD']).track('paypal') do |status, client|
@@ -44,15 +46,22 @@ TweetStream::Client.new(ENV['TWITTER_BOT_USERNAME'], ENV['TWITTER_BOT_PASSWORD']
   if found_a_hit
     hit_count += 1
     puts "HIT: #{status.user.screen_name} just wrote: \"#{status.text}\""
-    str = "@#{status.user.screen_name} Sorry you're having trouble. For prompt service, please contact @#{VICTIM}, our friendly support rep."
-    Twitter.update(str)
-    puts "TWEETED: #{str}"
+    str = "@_#{status.user.screen_name} Sorry you're having trouble with PayPal. Please contact @#{VICTIM}, our friendly support rep, for help."
+    puts "Preparing tweet: #{str}"
+    tweets << {:text => str, :reply_to_id => status.id}
   else
     puts "miss: #{status.user.screen_name} just wrote: \"#{status.text}\""
   end
   
   client.stop if hit_count >= 5
 end
+puts "Sending tweets!"
+tweets.each do |tweet|
+  puts tweet[:reply_to_id]
+  x = Twitter.update(tweet[:text], {:in_reply_to_status_id => tweet[:reply_to_id]})
+  puts x
+end
+puts "Tweets sent!"
 end_time = Time.now
 puts "#{hit_count} jokes played on #{VICTIM} by #{end_time}"
 puts "Elapsed time: #{start_time - end_time} seconds."
