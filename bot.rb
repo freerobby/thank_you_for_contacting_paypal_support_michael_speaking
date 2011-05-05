@@ -55,7 +55,7 @@ while (continue) do
       puts "miss: #{status.user.screen_name} just wrote: \"#{status.text}\""
     end
   
-    client.stop if hit_count >= 4
+    client.stop if hit_count >= 3
   end
   puts "Sending tweets!"
   tweets.each do |tweet|
