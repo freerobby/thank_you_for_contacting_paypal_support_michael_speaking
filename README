@@ -1,1 +1,5 @@
 Because what's the point of having friends if you don't mess with them?
+
+Assumes the following environment variables
+TWITTER_BOT_USERNAME
+TWITTER_BOT_PASSWORD

@@ -1,0 +1,3 @@
+export RUBYOPT="rubygems"
+export RUBYLIB="."
+rvm 1.9.2@thank_you_for_contacting_paypal_support_michael_speaking
